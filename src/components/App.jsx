@@ -1,16 +1,17 @@
-export const App = () => {
+import { FeedbackOptions } from './FeedbackOptions';
+import { Section } from './Section';
+import { Statistics } from './Statistics';
+import { FeedbackProvider } from 'context/FeedbackContext';
+
+export function App() {
   return (
-    <div
-      style={{
-        height: '100vh',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        fontSize: 40,
-        color: '#010101'
-      }}
-    >
-      React homework template
-    </div>
+    <FeedbackProvider>
+      <Section title="Please leave feedback">
+        <FeedbackOptions></FeedbackOptions>
+      </Section>
+      <Section title="Statistics">
+        <Statistics></Statistics>
+      </Section>
+    </FeedbackProvider>
   );
-};
+}
